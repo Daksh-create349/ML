@@ -4,7 +4,7 @@ A comprehensive collection of machine learning coursework, hands-on lab implemen
 
 ---
 
-## 📂 Repository Structure
+## Repository Structure
 
 ```text
 ├── Clustering/
@@ -64,7 +64,7 @@ A comprehensive collection of machine learning coursework, hands-on lab implemen
 
 ---
 
-## 📚 Assignments Overview
+## Assignments Overview
 
 | Assignment | Notebook Path | Primary Dataset | Description & Techniques |
 | :--- | :--- | :--- | :--- |
@@ -80,7 +80,7 @@ A comprehensive collection of machine learning coursework, hands-on lab implemen
 
 ---
 
-## 🔬 Topic-Wise Practice & Lab Notebooks
+## Topic-Wise Practice & Lab Notebooks
 
 ### 1. Data Foundations & Visualization
 * **`pandas_practice.ipynb`**: Fundamentals of Pandas: DataFrame operations, indexing, slicing, aggregation, and CSV data ingestion (`Universities.csv`).
@@ -104,7 +104,7 @@ A comprehensive collection of machine learning coursework, hands-on lab implemen
 
 ---
 
-## 🛠️ Installation & Setup
+## Installation & Setup
 
 1. **Clone the repository:**
    ```bash
@@ -130,7 +130,7 @@ A comprehensive collection of machine learning coursework, hands-on lab implemen
 
 ---
 
-## 📌 Usage Notes
+## Usage Notes
 
 * **Working Directory:** Most notebooks reference datasets relative to their directory or the project root. When executing notebooks in subdirectories, ensure the working directory is set to the respective folder or launch Jupyter directly from the project root.
 * **File Naming & Path Cases:** Check dataset casing on Linux/macOS case-sensitive filesystems (e.g., `Universities.csv` vs. `universities.csv`, `iris.csv` vs. `Iris.csv`).
