@@ -1,6 +1,6 @@
 # Machine Learning Repository
 
-A comprehensive collection of machine learning coursework, hands-on lab implementations, and academic assignments covering exploratory data analysis (EDA), data preprocessing, supervised learning (regression and classification), unsupervised learning (clustering), and ensemble methods using Python.
+A comprehensive collection of machine learning coursework, hands-on lab implementations, and academic assignments covering exploratory data analysis (EDA), data preprocessing, supervised learning (regression and classification), unsupervised learning (clustering, dimensionality reduction), neural networks, ensemble methods, and web-based model deployment using Python.
 
 ---
 
@@ -14,6 +14,11 @@ A comprehensive collection of machine learning coursework, hands-on lab implemen
 ├── Decision Trees/
 │   ├── dec_tree.ipynb
 │   └── iris.csv
+├── Deployment/
+│   ├── app.py
+│   ├── Logistic_Regression.ipynb
+│   ├── logistic_model.pkl
+│   └── claimants.csv
 ├── Ensemble Modeling/
 │   ├── ensemble_models.ipynb
 │   └── pima_indians_diabetes.csv
@@ -57,6 +62,15 @@ A comprehensive collection of machine learning coursework, hands-on lab implemen
 ├── ML Assignment 8/
 │   ├── Ensemble_Assignment.ipynb
 │   └── winequality-red.csv
+├── ML Assignment 9/
+│   ├── pca.ipynb
+│   └── iris.csv
+├── ML Assignment 10/
+│   ├── neural_networks.ipynb
+│   ├── iris_model.keras
+│   ├── scaler.pkl
+│   ├── encoder.pkl
+│   └── iris.csv
 ├── pandas_practice.ipynb
 ├── visuals.ipynb
 └── Universities.csv
@@ -77,6 +91,8 @@ A comprehensive collection of machine learning coursework, hands-on lab implemen
 | **Assignment 7 (Part 1)** | `ML Assignment 7/Knn_classification.ipynb` | `Iris.csv` | $K$-Nearest Neighbors classification on flower species: pairplot EDA, stratified train-test splitting, feature scaling, confusion matrix heatmap, and classification report. |
 | **Assignment 7 (Part 2)** | `ML Assignment 7/Knn_regression.ipynb` | `housing.csv` | $K$-Nearest Neighbors regression on California housing: median value prediction, missing value imputation, one-hot encoding, feature scaling, and evaluation (MAE, MSE, RMSE, $R^2$). |
 | **Assignment 8** | `ML Assignment 8/Ensemble_Assignment.ipynb` | `winequality-red.csv` | Ensemble learning for wine quality classification: Random Forest, AdaBoost, and Gradient Boosting benchmarking, confusion matrices, and feature importance analysis. |
+| **Assignment 9** | `ML Assignment 9/pca.ipynb` | `iris.csv` | Principal Component Analysis (PCA): dimensionality reduction from 4 features to 2 principal components (95.74% variance retained), Scree plot, biplot visualization, and logistic regression performance benchmarking before and after PCA. |
+| **Assignment 10** | `ML Assignment 10/neural_networks.ipynb` | `iris.csv` | Deep Learning with TensorFlow/Keras: multi-layer feedforward neural network (MLP) for Iris multiclass classification, loss and accuracy training curves, classification evaluation, single-sample inference, and model serialization (`iris_model.keras`). |
 
 ---
 
@@ -95,12 +111,20 @@ A comprehensive collection of machine learning coursework, hands-on lab implemen
 * **`Decision Trees/dec_tree.ipynb`**: Decision Tree Classifier on the Iris dataset: tree construction, max depth / criterion tuning (Gini vs. Entropy), and evaluation.
 * **`SVM Class/SVM.ipynb`**: Support Vector Machine classification on Pima Indians Diabetes data: RBF kernel analysis, the majority-class collapse trap with unscaled data, and hyperparameter tuning with `GridSearchCV` ($C$ and $\gamma$).
 
-### 4. Clustering (Unsupervised Learning)
+### 4. Clustering & Dimensionality Reduction (Unsupervised Learning)
 * **`Clustering/kmeans.ipynb`**: $K$-Means clustering on university metrics: feature standardization, cluster profiling, Within-Cluster Sum of Squares (WCSS), and Elbow method hyperparameter tuning.
 * **`Clustering/hac.ipynb`**: Hierarchical Agglomerative Clustering (HAC): Min-Max normalization, complete linkage calculation, dendrogram visualization, and silhouette score validation.
+* **`ML Assignment 9/pca.ipynb`**: Principal Component Analysis for dimensionality reduction, eigenvalue/variance explained analysis, and feature projection.
 
-### 5. Ensemble Modeling
+### 5. Neural Networks & Deep Learning
+* **`ML Assignment 10/neural_networks.ipynb`**: Multi-layer perceptron (Sequential Keras architecture) with dense layers, ReLU and Softmax activations, Adam optimization, cross-entropy loss, and inference pipeline.
+
+### 6. Ensemble Modeling
 * **`Ensemble Modeling/ensemble_models.ipynb`**: Comparative study of ensemble architectures on diabetes diagnosis: Bagging (Bootstrap Aggregation), Random Forest, AdaBoost, and Voting/Stacking Classifiers with $K$-Fold cross-validation.
+
+### 7. Model Deployment
+* **`Deployment/app.py`**: Interactive Streamlit web application serving a trained binary logistic regression model (`logistic_model.pkl`) to predict legal claimant representation in real-time.
+* **`Deployment/Logistic_Regression.ipynb`**: Model training, evaluation, and pickle serialization workflow feeding into the deployment app.
 
 ---
 
@@ -120,12 +144,18 @@ A comprehensive collection of machine learning coursework, hands-on lab implemen
 
 3. **Install required dependencies:**
    ```bash
-   pip install jupyter pandas numpy matplotlib seaborn scikit-learn statsmodels scipy
+   pip install jupyter pandas numpy matplotlib seaborn scikit-learn statsmodels scipy tensorflow streamlit joblib
    ```
 
 4. **Launch Jupyter:**
    ```bash
    jupyter notebook
+   ```
+
+5. **Run the Streamlit Deployment App:**
+   ```bash
+   cd Deployment
+   streamlit run app.py
    ```
 
 ---
@@ -134,6 +164,8 @@ A comprehensive collection of machine learning coursework, hands-on lab implemen
 
 * **Working Directory:** Most notebooks reference datasets relative to their directory or the project root. When executing notebooks in subdirectories, ensure the working directory is set to the respective folder or launch Jupyter directly from the project root.
 * **File Naming & Path Cases:** Check dataset casing on Linux/macOS case-sensitive filesystems (e.g., `Universities.csv` vs. `universities.csv`, `iris.csv` vs. `Iris.csv`).
-* **Generated Prediction Files:**
+* **Generated Prediction Files & Artifacts:**
   * `ML Assignment 4/employee_data_encoded.csv`: Transformed and encoded output generated by `ass4.ipynb`.
   * `ML Assignment 5/titanic_predictions.csv`: Model predictions generated by `Assignment5.ipynb`.
+  * `ML Assignment 10/iris_model.keras`, `scaler.pkl`, `encoder.pkl`: Trained neural network model and preprocessor artifacts.
+  * `Deployment/logistic_model.pkl`: Exported model for the Streamlit web deployment.
